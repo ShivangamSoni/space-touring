@@ -15,8 +15,8 @@ export default function Layout({
         mobile: '/assets/destination/background-destination-mobile.jpg',
       }}
     >
-      <section className="grid grid-rows-[auto_1fr] py-5 px-32">
-        <h2 className="text-white text-4xl uppercase tracking-wider space-x-4">
+      <section className="grid grid-rows-[auto_1fr] py-5 px-8 lg:px-32">
+        <h2 className="text-white text-3xl lg:text-4xl uppercase tracking-wider space-x-4 mb-10">
           <span className="font-semibold text-white text-opacity-50">
             01&nbsp;
           </span>

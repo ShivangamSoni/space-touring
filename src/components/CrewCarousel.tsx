@@ -12,27 +12,29 @@ export default function CrewCarousel({ members }: { members: Crew[] }) {
   const crewMember = members.find(({ id }) => id === crewId)!;
 
   return (
-    <div className="grid grid-cols-2 gap-10">
-      <div className="grid grid-rows-[1fr_auto] py-16">
+    <div className="grid lg:grid-cols-2 gap-4 lg:gap-10">
+      <div className="grid grid-rows-[1fr_auto] gap-8 lg:gap-0 py-8 lg:py-16">
         <div className="self-center grid gap-8">
           <h3
-            className={`${bellfair.className} uppercase flex flex-col gap-1 tracking-widest`}
+            className={`${bellfair.className} uppercase flex flex-col gap-1 tracking-widest text-center lg:text-left`}
           >
-            <span className="text-4xl text-white text-opacity-50">
+            <span className="text-2xl lg:text-4xl text-white text-opacity-50">
               {crewMember.role}&nbsp;
             </span>
-            <span className="text-5xl text-white">{crewMember.name}</span>
+            <span className="text-4xl lg:text-5xl text-white">
+              {crewMember.name}
+            </span>
           </h3>
-          <p className="text-justify text-lg tracking-wider w-4/6">
+          <p className="text-center lg:text-justify lg:text-lg tracking-wider w-4/6 mx-auto lg:mx-0">
             {crewMember.bio}
           </p>
         </div>
 
-        <ul className="flex items-center gap-4">
+        <ul className="flex items-center justify-center lg:justify-start gap-4">
           {members.map(({ id, name }) => (
             <li key={id}>
               <button
-                className={`outline-none border-none w-5 aspect-square rounded-full bg-white ${
+                className={`outline-none border-none w-4 lg:w-5 aspect-square rounded-full bg-white ${
                   id === crewId
                     ? 'bg-opacity-100'
                     : 'bg-opacity-20 hover:bg-opacity-50 focus-visible:bg-opacity-50'
@@ -48,7 +50,11 @@ export default function CrewCarousel({ members }: { members: Crew[] }) {
           ))}
         </ul>
       </div>
-      <Image src={crewMember.image} alt="" />
+      <Image
+        src={crewMember.image}
+        alt=""
+        className="justify-self-center lg:justify-self-auto"
+      />
     </div>
   );
 }

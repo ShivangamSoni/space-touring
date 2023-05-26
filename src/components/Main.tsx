@@ -23,7 +23,7 @@ export default function Main({
     <main className="grid">
       <div
         style={styles}
-        className={`fixed inset-0 w-full h-full -z-10 bg-no-repeat bg-cover bg-[image:var(--bg-mobile)] md:bg-[image:var(--bg-tablet)] lg:bg-[image:var(--bg-desktop)]`}
+        className={`fixed inset-0 w-full h-full -z-10 bg-no-repeat bg-cover bg-[image:var(--bg-mobile)] sm:bg-[image:var(--bg-tablet)] lg:bg-[image:var(--bg-desktop)]`}
       ></div>
       {children}
     </main>

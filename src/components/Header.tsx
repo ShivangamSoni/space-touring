@@ -33,16 +33,16 @@ export default function Header() {
   const pathname = usePathname();
 
   return (
-    <header className="flex items-center justify-between text-white">
+    <header className="flex items-center justify-between gap-8 lg:gap-0 text-white pl-4">
       <h1>
         <Image src={Logo} alt="" />
         <span className="sr-only">Space Touring</span>
       </h1>
 
-      <div className="h-[1px] bg-gray-500 flex-1 translate-x-16 z-10"></div>
+      <div className="hidden lg:block h-[1px] bg-gray-500 flex-1 translate-x-16 z-10"></div>
 
-      <nav className="flex-1 pl-28 bg-white bg-opacity-5 backdrop-blur-md">
-        <ul className="flex items-center justify-start gap-12">
+      <nav className="lg:flex-1 px-8 lg:pl-28 bg-white bg-opacity-5 backdrop-blur-md">
+        <ul className="flex items-center justify-start gap-8 lg:gap-12">
           {SITE_LINKS.map(({ id, label, href }, i) => {
             const isActive =
               href === '/' ? pathname === '/' : pathname.startsWith(href);
