@@ -1,10 +1,11 @@
 'use client';
-import { Crew } from '@/app/api/crew/crew';
-import Image from 'next/image';
-
-import { Bellefair } from 'next/font/google';
 import { useState } from 'react';
+
+import Image from 'next/image';
+import { Bellefair } from 'next/font/google';
 const bellfair = Bellefair({ weight: '400', subsets: ['latin'] });
+
+import { Crew } from '@/app/api/crew/crew';
 
 export default function CrewCarousel({ members }: { members: Crew[] }) {
   const [crewId, setCrewId] = useState(members[0].id);
@@ -31,8 +32,10 @@ export default function CrewCarousel({ members }: { members: Crew[] }) {
           {members.map(({ id, name }) => (
             <li key={id}>
               <button
-                className={`w-5 aspect-square rounded-full bg-white ${
-                  id === crewId ? 'bg-opacity-100' : 'bg-opacity-30'
+                className={`outline-none border-none w-5 aspect-square rounded-full bg-white ${
+                  id === crewId
+                    ? 'bg-opacity-100'
+                    : 'bg-opacity-20 hover:bg-opacity-50 focus-visible:bg-opacity-50'
                 }`}
                 onClick={() => setCrewId(id)}
               >
