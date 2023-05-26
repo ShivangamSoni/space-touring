@@ -13,10 +13,10 @@ export default function Link({
 }: Props) {
   return (
     <NextLink
-      className={`flex items-center justify-center tracking-widest gap-2 py-4 uppercase outline-none border-b-2 transition-all hover:border-slate-400 hover:border-opacity-50 focus-visible:border-slate-400 focus-visible:border-opacity-50 ${
+      className={`flex items-center justify-center tracking-widest gap-2 py-4 uppercase outline-none border-b-2 transition-all ${
         isActive
           ? 'border-current hover:border-current hover:border-opacity-100 focus-visible:border-current focus-visible:border-opacity-100'
-          : 'border-transparent'
+          : 'border-transparent hover:border-slate-400 hover:border-opacity-50 focus-visible:border-slate-400 focus-visible:border-opacity-50'
       }`}
       {...props}
     >

@@ -6,12 +6,6 @@ import Logo from '@/assets/shared/logo.svg';
 
 import Link from './Link';
 
-import { Barlow_Condensed } from 'next/font/google';
-const barlowCondensed = Barlow_Condensed({
-  weight: ['400', '700'],
-  subsets: ['latin'],
-});
-
 const SITE_LINKS = [
   {
     id: crypto.randomUUID(),
@@ -39,17 +33,15 @@ export default function Header() {
   const pathname = usePathname();
 
   return (
-    <header
-      className={`${barlowCondensed.className} flex items-center justify-between`}
-    >
+    <header className="flex items-center justify-between text-white">
       <h1>
         <Image src={Logo} alt="" />
         <span className="sr-only">Space Touring</span>
       </h1>
 
-      <div className="h-[1px] bg-gray-500 flex-1 translate-x-16"></div>
+      <div className="h-[1px] bg-gray-500 flex-1 translate-x-16 z-10"></div>
 
-      <nav className="flex-1 pl-28 bg-white bg-opacity-5 backdrop:blur-md">
+      <nav className="flex-1 pl-28 bg-white bg-opacity-5 backdrop-blur-md">
         <ul className="flex items-center justify-start gap-12">
           {SITE_LINKS.map(({ id, label, href }, i) => {
             const isActive =
