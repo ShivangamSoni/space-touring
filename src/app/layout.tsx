@@ -1,9 +1,12 @@
 import './globals.css';
 import Header from '@/components/Header';
 
-import { Bellefair } from 'next/font/google';
+import { Barlow_Condensed } from 'next/font/google';
 
-const bellefair = Bellefair({ weight: '400', subsets: ['latin'] });
+const barlow = Barlow_Condensed({
+  weight: ['300', '400', '500', '600', '700'],
+  subsets: ['latin'],
+});
 
 export const metadata = {
   title: 'Space Touring',
@@ -17,7 +20,9 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en">
-      <body className={`${bellefair.className} bg-primary-blue text-white`}>
+      <body
+        className={`${barlow.className} bg-primary-blue text-primary-violet`}
+      >
         <div className="w-[min(1440px,100%)] min-h-screen grid grid-rows-[auto_1fr] gap-10 py-4 mx-auto">
           <Header />
           {children}
