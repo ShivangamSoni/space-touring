@@ -16,7 +16,7 @@ export default async function Destination({
 }) {
   const destination = await getDestination({ slug });
   if (!destination) {
-    redirect('/');
+    redirect('/destination');
   }
 
   return (
