@@ -6,6 +6,7 @@ const barlow = Barlow_Condensed({
 
 import './globals.css';
 import Header from '@/components/Header';
+import Footer from '@/components/Footer';
 
 export const metadata = {
   title: 'Space Touring',
@@ -25,6 +26,7 @@ export default function RootLayout({
         <div className="w-[min(1440px,100%)] min-h-screen grid grid-rows-[auto_1fr] gap-10 pb-4 mx-auto">
           <Header />
           {children}
+          <Footer />
         </div>
       </body>
     </html>
