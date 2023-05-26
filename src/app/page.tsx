@@ -3,9 +3,13 @@ import Link from 'next/link';
 import Main from '@/components/Main';
 
 import { Bellefair } from 'next/font/google';
+import { getDestinations } from './api/destination/getDestinations';
 const bellefair = Bellefair({ weight: '400', subsets: ['latin'] });
 
-export default function Home() {
+export default async function Home() {
+  const exploreLink = `/destination/${(
+    await getDestinations()
+  )[0].name.toLowerCase()}`;
   return (
     <Main
       bg={{
@@ -34,7 +38,7 @@ export default function Home() {
 
         <div className="justify-self-end">
           <Link
-            href={'/destination'}
+            href={exploreLink}
             className={`${bellefair.className} uppercase text-4xl outline-none border-none flex items-center justify-center bg-white text-primary-blue w-64 aspect-square rounded-full relative after:content-[""] after:absolute after:-inset-20 after:rounded-full after:bg-white after:bg-opacity-20 after:backdrop-blur-sm after:-z-10 after:scale-0 after:transition-transform after:duration-500 hover:after:scale-100`}
           >
             Explore

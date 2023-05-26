@@ -17,7 +17,7 @@ export default function Link({
         isActive
           ? 'border-current hover:border-current hover:border-opacity-100 focus-visible:border-current focus-visible:border-opacity-100'
           : 'border-transparent hover:border-slate-400 hover:border-opacity-50 focus-visible:border-slate-400 focus-visible:border-opacity-50'
-      }`}
+      } ${className}`}
       {...props}
     >
       {children}
