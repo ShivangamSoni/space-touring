@@ -16,7 +16,7 @@ export default function Layout({
       }}
     >
       <section className="grid grid-rows-[auto_1fr] py-5 px-8 lg:px-32">
-        <h2 className="text-white text-3xl lg:text-4xl uppercase tracking-wider space-x-4 mb-10">
+        <h2 className="text-white text-center sm:text-left text-xl sm:text-2xl md:text-3xl lg:text-4xl uppercase tracking-wider space-x-4 mb-10">
           <span className="font-semibold text-white text-opacity-50">
             01&nbsp;
           </span>
